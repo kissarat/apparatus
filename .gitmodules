@@ -1,0 +1,3 @@
+[submodule "ganache/ui"]
+	path = ganache/ui
+	url = git@github.com:trufflesuite/ganache-ui.git
