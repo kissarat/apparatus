@@ -10,7 +10,7 @@ apt-get upgrade -y
 apt-get install -y curl
 curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 bash nodesource_setup.sh
-apt-get install -y nodejs
+apt-get install -y nodejs npm
 npm i -g pm2
 # cd /server
 # npm i

@@ -49,7 +49,7 @@ services:
       - NODE_ENV=development
       - HOST=0.0.0.0
       - PORT=3000
-      - QUEUE_CONNECTION_URL=amqp://labiak_rabbitmq/?user=labiak_user&pass=labiak_pass
+      - QUEUE_CONNECTION_URL=amqp://labiak_user:labiak_pass@labiak_rabbitmq/
       - SMTP_PORT=1025
       - SMTP_HOST=labiak_mailhog
     command: ./start.sh
