@@ -8,17 +8,10 @@ services:
       - 3000:3000
     networks:
       - labiak
-    volumes:
-      - .:/server
-      - node_modules:/node_modules
     environment:
-      HOST: '0.0.0.0'
       PORT: 3000
-    command: ./start.sh
+    command: npm start
 
 networks:
   labiak:
     driver: bridge
-
-volumes:
-  node_modules:

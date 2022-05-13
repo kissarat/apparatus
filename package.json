@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Test project for Eivolo Solutions",
   "main": "src/server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kissarat/apparatus.git"

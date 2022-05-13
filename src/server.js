@@ -1,5 +1,6 @@
 const express = require('express')
 const http = require('http')
+const { join } = require('path')
 
 function home(req, res) {
     res.json({
@@ -7,16 +8,20 @@ function home(req, res) {
     })
 }
 
+function configureExpress(app) {
+    app.use(express.static(join(__dirname, '..', 'public')))
+}
+
 function main() {
     try {
         const app = express()
-        app.get('/', home)
+        configureExpress(app)
+        app.get('/api/', home)
         const server = http.createServer(app)
         const port = +process.env.PORT || 3000
         server.listen(port, function() {
             console.log(`Listen at http://localhost:${port}/`)
         })
-
     } catch (err) {
         console.error(err)
     }

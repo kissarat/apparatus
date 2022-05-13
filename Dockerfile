@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim AS debian_kiev
+FROM debian:bookworm AS debian_kiev
 ENV LANG=en_US \
     LANGUAGE=en \
     LC_ALL=en_US.UTF-8 \
@@ -12,5 +12,8 @@ FROM debian_kiev AS debian_node
 RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh \
     && bash nodesource_setup.sh \
     && apt-get install -y nodejs npm
+ADD . /server
 WORKDIR /server
+RUN npm install
 EXPOSE 3000
+CMD [ "npm", "start" ]
