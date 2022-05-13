@@ -1,6 +1,7 @@
 const express = require('express')
 const http = require('http')
 const { join } = require('path')
+const { setupWebSocket } = require('./socket')
 
 function home(req, res) {
     res.json({
@@ -18,6 +19,7 @@ function main() {
         configureExpress(app)
         app.get('/api/', home)
         const server = http.createServer(app)
+        setupWebSocket(server)
         const port = +process.env.PORT || 3000
         server.listen(port, function() {
             console.log(`Listen at http://localhost:${port}/`)
